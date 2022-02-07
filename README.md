@@ -51,7 +51,8 @@ To configure [outputs](outputs.tf), refer to the [documentation](https://registr
 * SSH into the JMeter controller and run the following command to start JMeter:
 
 ```sh
-jmeter -n -t apache-jmeter-5.4.3/bin/examples/CSVSample.jmx -R <worker-IP-address-1,worker-IP-address-2...> -l run1.log -Dserver.rmi.ssl.disable=true -l Run1.log
+jmeter -n -t apache-jmeter-5.4.3/bin/examples/CSVSample.jmx -R <worker-IP-address-1,worker-IP-address-2...> \ 
+-l run1.log -Dserver.rmi.ssl.disable=true
 ```
 
 ## JMeter validation
