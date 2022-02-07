@@ -19,17 +19,17 @@ This repo will help you to spin up an AWS EC2 instances with Java, JMeter, and J
 ## Usage
 
 ```hcl
-module "jmeter" {
-  source  = "QAInsights/jmeter/aws"
-  version = "1.1.0"
+module "jmeter-distributed-load-test-infra" {
+  source  = "QAInsights/jmeter-distributed-load-test-infra/aws"
 
-  # insert the 5 required variables here
-
+  # insert the required variables here
   aws_ami                      = "ami-001089eb624938d9f"
-  aws_controller_instance_type = "t2.small"
   aws_key_name                 = "terraform"
-  aws_worker_instance_type     = "t2.small"
+  jmeter_version               = "5.4.3"
   jmeter_workers_count         = 2
+  aws_controller_instance_type = "t2.small"
+  aws_worker_instance_type     = "t2.small"
+  jmeter_plugins               = ["jpgc-casutg"]
 }
 ```
 
